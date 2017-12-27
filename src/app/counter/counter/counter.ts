@@ -4,9 +4,9 @@ import { RANDOM_SEED_SUCCESS } from './counter.actions';
 import { Action, createFeatureSelector, createSelector } from '@ngrx/store';
 import * as fromRoot from '../../app.module';
 import { INCREMENT, DECREMENT, RESET } from './counter.actions';
-import { UnsafeAction } from "../../details/details-component/reducers/log-entry.reducer";
+import { UnsafeAction } from '../../details/details-component/reducers/log-entry.reducer';
 
-export interface State extends fromRoot.State {
+export interface State {
   count: number;
 }
 
