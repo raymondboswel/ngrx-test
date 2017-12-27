@@ -2,7 +2,8 @@ import { LogEntry } from './../../models/log-entry';
 import { Store } from '@ngrx/store';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { INCREMENT, DECREMENT, RESET, getCount } from './counter';
+import { INCREMENT, DECREMENT, RESET, RANDOM_SEED } from './counter.actions';
+import { getCount } from './counter';
 import * as fromCounter from './counter';
 import { LOG_OPERATION, AddLogOperation } from '../../details/details-component/log-entry.actions';
 
@@ -41,6 +42,10 @@ export class CounterComponent {
   reset() {
     this.createlogEntry('RESET');
     this.store.dispatch({ type: RESET });
+  }
+
+  getSeed() {
+    this.store.dispatch({type: RANDOM_SEED});
   }
 
 }

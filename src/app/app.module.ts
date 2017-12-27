@@ -16,6 +16,7 @@ import { storeFreeze } from 'ngrx-store-freeze';
 import { EffectsModule } from '@ngrx/effects';
 import { AppComponent } from './app.component';
 import { DetailsComponent } from './details/details-component/details.component';
+import { HttpModule } from '@angular/http/http';
 
 // // console.log all actions
 // export function logger(reducer: ActionReducer<State>): ActionReducer<State> {
@@ -53,6 +54,7 @@ export const reducers: ActionReducerMap<State> = {
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     DetailsModule,
     CounterModule,
     StoreModule.forRoot({routerReducer: fromRouter.routerReducer}),
